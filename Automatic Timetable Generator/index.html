@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Timetable Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Automatic Timetable Generator</h1>
+
+    <!-- Input Sections -->
+    <div class="input-section">
+      <!-- Subjects -->
+      <div class="input-group">
+        <h3>📚 Subjects</h3>
+        <div class="form-row">
+          <input type="text" id="subjectName" placeholder="Subject Name" />
+          <input type="number" id="periodsPerWeek" placeholder="Periods/Week" min="1" />
+          <button class="btn-add" onclick="addSubject()">Add</button>
+        </div>
+        <div id="subjectsList"></div>
+      </div>
+
+      <!-- Teachers -->
+      <div class="input-group">
+        <h3>👨‍🏫 Teachers</h3>
+        <div class="form-row">
+          <input type="text" id="teacherName" placeholder="Teacher Name" />
+          <select id="teacherSubjects"></select>
+          <button class="btn-add" onclick="addTeacher()">Add</button>
+        </div>
+        <div id="teachersList"></div>
+      </div>
+
+      <!-- Classes -->
+      <div class="input-group">
+        <h3>🏫 Classes</h3>
+        <div class="form-row">
+          <input type="text" id="className" placeholder="Class Name (e.g., Grade 10A)" />
+          <button class="btn-add" onclick="addClass()">Add</button>
+        </div>
+        <div id="classesList"></div>
+      </div>
+
+      <!-- Time Settings -->
+      <div class="input-group">
+        <h3>⏰ Time Settings</h3>
+        <div class="form-row">
+          <label>Periods per day:</label>
+          <input type="number" id="periodsPerDay" value="8" min="4" max="12" />
+        </div>
+        <div class="form-row">
+          <label>Working days:</label>
+          <select id="workingDays">
+            <option value="5">Monday to Friday</option>
+            <option value="6">Monday to Saturday</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Start time:</label>
+          <input type="time" id="startTime" value="09:00" />
+        </div>
+        <div class="form-row">
+          <label>Period duration (min):</label>
+          <input type="number" id="periodDuration" value="45" min="30" max="90" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Generate Button -->
+    <button class="generate-btn" onclick="generateTimetable()">🚀 Generate Timetable</button>
+
+    <!-- Output Section -->
+    <div id="result"></div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
